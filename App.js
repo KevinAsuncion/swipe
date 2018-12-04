@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 import { Card, Button } from 'react-native-elements'
 import Deck from "./src/Deck";
 
-
 const DATA = [
   {
     id: 1,
@@ -66,12 +65,19 @@ export default class App extends React.Component {
       </Card>
     )
   }
+  renderNoMoreCards(){
+    return <Card title="All Done!" style={{ marginTop: 10 }}>
+        <Text style={{marginBottom: 10}}>No More Cards</Text>
+        <Button backgroundColor="#03A9F4" title="Get more!" />
+      </Card>;
+  }
   render() {
     return (
       <View style={styles.container}>
         <Deck 
           data={DATA}
           renderCard={this.renderCard}
+          renderNoMoreCards={this.renderNoMoreCards}
         />
       </View>
     );
