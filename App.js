@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Card, Button } from 'react-native-elements'
 import Deck from "./src/Deck";
 
@@ -56,7 +56,12 @@ export default class App extends React.Component {
       title={item.text}
       image={{uri: item.uri}}
       >
-
+      <Text style={{marginBottom: 10}}>some text</Text>
+      <Button
+      icon={{name: 'code'}}
+      backgroundColor="#03A9F4"
+      title="View Now!"
+      />
 
       </Card>
     )
